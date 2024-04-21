@@ -1,0 +1,56 @@
+import std;
+
+class People {
+  init {
+
+  }
+  struct alignas(8) {
+   public:
+    var name: Char[30];
+    var age: Int16;
+  }
+  constructor(name: Char[30], age: Int16) {
+    this.name = name;
+    this.age = age;
+
+    return {
+      name: ref
+      age: const
+    };
+  }
+
+  operator Say(ref message: Char[]) {
+    std.out << name << " says: " << message << std.endl;
+  }
+
+  fun SayHello(): void {
+    std.out << name << " says: " << "Hi, I am " << this.name << ", nice to meet you!" << std.endl;
+  }
+}
+
+fun main() {
+  std.out << "Hello, world!" << std.endl;
+
+  var alice = People("Alice", 25);
+  alice.SayHello();
+  alice Say "today is a good day!";
+  alice.operator@Say("I am happy!");
+}
+
+/*
+ * Output:
+ *   Hello, world!
+ *   Alice says: Hi, I am Alice, nice to meet you!
+ *   Alice says: today is a good day!
+ *   Alice says: I am happy!
+ *
+ * Structure:
+ *   People(class)
+ *     struct
+ *       name: Char[30]
+ *       age: Int16
+ *     constructor(fun) pub
+ *     Say(operator) pub
+ *     SayHello(fun) pub
+ *   main(fun)
+ */
