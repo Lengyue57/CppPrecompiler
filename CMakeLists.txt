@@ -13,13 +13,4 @@ message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 message(STATUS "CMAKE_SOURCE_DIR: ${CMAKE_SOURCE_DIR}")
 message(STATUS "CMAKE_BINARY_DIR: ${CMAKE_BINARY_DIR}")
 
-add_executable(${CMAKE_PROJECT_NAME})
-
-target_sources(
-  ${CMAKE_PROJECT_NAME}
-  PRIVATE
-  "main.cpp"
-  "Tokens.cpp"
-)
-
-add_subdirectory("./TestModule")
+add_subdirectory("${CMAKE_SOURCE_DIR}/src")

@@ -15,7 +15,7 @@ class A {
 
 int main(int argc, const char* argv[]) {
   std::ifstream file(
-    "C:/Users/OMEN/Documents/Lib/Projects/CppPrecompiler/tester.pccxx"
+    "C:/Users/OMEN/Documents/Lib/Projects/CppPrecompiler/test/tester.pccxx"
   );
   // std::string fileData((std::stringstream() << file.rdbuf()).str());
   // file.close();
